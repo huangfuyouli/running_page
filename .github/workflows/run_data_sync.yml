@@ -94,3 +94,11 @@ jobs:
           rebase: 'true'
           name: huangfuyouli
           email: hfyl1992@gmail.com
+      
+      - name: Build and Deploy
+        uses: JamesIves/github-pages-deploy-action@master
+        env:
+            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+            BRANCH: gh-pages
+            FOLDER: public
+            BUILD_SCRIPT: yarn install && yarn build
